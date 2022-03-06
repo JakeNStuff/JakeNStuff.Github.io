@@ -6,11 +6,11 @@ I want to start off by saying I recently had to do a deep clean of my computer s
 
 ##CATEGORY: Software Engineering / Design
 
-###[CS360 Phone Inventory Project]
+[CS360 Phone Inventory Project](https://github.com/JakeNStuff/JakeNStuff.Github.io/blob/main/JacobMousseauProject2.zip)
 
 The design of this application is not all that great, while clean, it is very bare bones and lacks much substance, meaning it has no real way of being user engaging and allowing them to understand what they are working with. I want to make it cleaner and more consistent between elements, as well as fixing the landscape views of this project, as they do not look quite right, provided below are the portrait designs, and a simple chart for how I want to make them more consistent.
 
-[!All Three main windows, portrait mode](Design)
+![All Three main windows, portrait mode](Design.png)
 
 While one of the main goals was to design a working database for inventory manage on a phone, I selected this here for the design aspect due to the ability to design a clean looking application that would perform those functions, but I am still not entirely happy with this project as a whole, and figured I could potentially make it look nicer. Although, if I find a way to access my older work from other classes, I may want to change this for changing another projects design. 
     
@@ -56,7 +56,7 @@ In order to enhance this code and my understanding, I would want to think of oth
                                                                                                      
 ##CATEGORY: Databases
 
-###[CS360 Phone Inventory Project- Saving Information]
+[CS360 Phone Inventory Project- Saving Information](https://github.com/JakeNStuff/JakeNStuff.Github.io/blob/main/JacobMousseauProject2.zip)
 
 As mentioned previously about missing files that I needed, I currently can not show this application in it's 'functional' state, and firstly, it didn't fully work, as items put into the inventory database could not actually be saved or edited, which is the first thing I would need to fix in order to enhance this projects work, make the database save the information, because the test logins work but the information is not saved based on those logins yet. Essentially, this is a shell for a potential database design. 
 

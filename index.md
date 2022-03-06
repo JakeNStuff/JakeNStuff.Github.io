@@ -1,41 +1,26 @@
-## Welcome to GitHub Pages
+## Capstone Jacob Mousseau
 
-You can use the [editor on GitHub](https://github.com/JakeNStuff/JakeNStuff.Github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-'''
 I want to start off by saying I recently had to do a deep clean of my computer so a lot of my files and artifacts from previous classes were moved or I was unable to find them, so my options were mostly limited to stuff I have in other github repositories.
-'''
-##CATEGORY: Software Engineering / Design
-###<file>
 
+
+
+##CATEGORY: Software Engineering / Design
+
+###[CS360 Phone Inventory Project]
+
+The design of this application is not all that great, while clean, it is very bare bones and lacks much substance, meaning it has no real way of being user engaging and allowing them to understand what they are working with. I want to make it cleaner and more consistent between elements, as well as fixing the landscape views of this project, as they do not look quite right, provided below are the portrait designs, and a simple chart for how I want to make them more consistent.
+
+[!All Three main windows, portrait mode](Design)
+
+While one of the main goals was to design a working database for inventory manage on a phone, I selected this here for the design aspect due to the ability to design a clean looking application that would perform those functions, but I am still not entirely happy with this project as a whole, and figured I could potentially make it look nicer. Although, if I find a way to access my older work from other classes, I may want to change this for changing another projects design. 
+    
+    
 ##CATEGORY: Algorithms and Data Structures
+    
 [SQL INJECTION FILE](https://github.com/JakeNStuff/JakeNStuff.Github.io/blob/main/SQLInjection.cpp)
-The SQL Injection practice code is from CS 405's second module if I recall correctly. The purpose of this assignment was to familiarize ourselves with how sql injections work by testing various injections and how they would 'infect' a database query. There was one section of TODO work while a good chunk of this program we were not supposed to touch. We were supposed to force the method to fail if there was a SQL injection suspected but we had to make sure it was not overly specific, as something like 1=1 would not be able to stop the flow. My code for the section in question is shown here:   
+    
+The SQL Injection practice code is from CS 405's second module if I recall correctly. The purpose of this assignment was to familiarize ourselves with how sql injections work by testing various injections and how they would 'infect' a database query. There was one section of TODO work while a good chunk of this program we were not supposed to touch. We were supposed to force the method to fail if there was a SQL injection suspected but we had to make sure it was not overly specific, as something like 1=1 would not be able to stop the flow. My code for the section in question is shown here:
+    
 ```
 // TODO: Fix this method to fail and display an error if there is a suspected SQL Injection
     //  NOTE: You cannot just flag 1=1 as an error, since 2=2 will work just as well. You need
@@ -63,10 +48,31 @@ The SQL Injection practice code is from CS 405's second module if I recall corre
 
   return true;
 }
-```   
+```
+                                                                                                     
 In order to enhance this code and my understanding, I would want to think of other situations where potential sql injections could happen based on the input information, and how to stop them, this would require tinkering with the sections we were not supposed to touch during the assignment. 
 
+                                                                                                     
+                                                                                                     
+##CATEGORY: Databases
 
+###[CS360 Phone Inventory Project- Saving Information]
+
+As mentioned previously about missing files that I needed, I currently can not show this application in it's 'functional' state, and firstly, it didn't fully work, as items put into the inventory database could not actually be saved or edited, which is the first thing I would need to fix in order to enhance this projects work, make the database save the information, because the test logins work but the information is not saved based on those logins yet. Essentially, this is a shell for a potential database design. 
+
+```
+Once a user is logged in, they should be able to view their companies inventory, stock, and other information.
+
+At the bottom there is two buttons, new, and modify entry buttons.
+
+Hitting new takes them to the entry creation window where they can add in the name, stock, and notes.
+
+Ideally, modify would use a similar page to modify already existing information.
+
+Hitting Add Entry should add the information, and go back should return you to the previous window, while undo should delete the most recent addition.
+```
+
+Missing a lot of my files while beginning this capstone has really made me freak out for what I should put here, if there is a way to access previous classes work through brightspace outside of the most recent classes, I would love to be able to access my other content. 
 
 ### Jekyll Themes
 

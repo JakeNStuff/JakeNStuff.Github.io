@@ -34,10 +34,10 @@ I want to start off by saying I recently had to do a deep clean of my computer s
 ###<file>
 
 ##CATEGORY: Algorithms and Data Structures
-###[<SQL INJECTION FILE>](https://github.com/JakeNStuff/JakeNStuff.Github.io/blob/main/SQLInjection.cpp)
-The SQL Injection practice code is from CS 405's second module if I recall correctly. The purpose of this assignment was to familiarize ourselves with how sql injections work by testing various injections and how they would 'infect' a database query. There was one section of TODO work while a good chunk of this program we were not supposed to touch. We were supposed to force the method to fail if there was a SQL injection suspected but we had to make sure it was not overly specific, as something like 1=1 would not be able to stop the flow. My code for the section in question is shown here:
-'''
-'// TODO: Fix this method to fail and display an error if there is a suspected SQL Injection
+[SQL INJECTION FILE](https://github.com/JakeNStuff/JakeNStuff.Github.io/blob/main/SQLInjection.cpp)
+The SQL Injection practice code is from CS 405's second module if I recall correctly. The purpose of this assignment was to familiarize ourselves with how sql injections work by testing various injections and how they would 'infect' a database query. There was one section of TODO work while a good chunk of this program we were not supposed to touch. We were supposed to force the method to fail if there was a SQL injection suspected but we had to make sure it was not overly specific, as something like 1=1 would not be able to stop the flow. My code for the section in question is shown here:   
+```
+// TODO: Fix this method to fail and display an error if there is a suspected SQL Injection
     //  NOTE: You cannot just flag 1=1 as an error, since 2=2 will work just as well. You need
     //  something more generic
     int pos = find_match_position(sql.c_str());
@@ -62,8 +62,8 @@ The SQL Injection practice code is from CS 405's second module if I recall corre
   }
 
   return true;
-}'
-'''
+}
+```   
 In order to enhance this code and my understanding, I would want to think of other situations where potential sql injections could happen based on the input information, and how to stop them, this would require tinkering with the sections we were not supposed to touch during the assignment. 
 
 

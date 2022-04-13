@@ -8,6 +8,8 @@
 #include <vector>
 
 #include "sqlite3.h"
+#include <regex>
+#include "../SQL Injection Enhancement/sqlite3.h"
 
 // DO NOT CHANGE
 typedef std::tuple<std::string, std::string, std::string> user_record;
@@ -60,7 +62,16 @@ bool initialize_database(sqlite3* db)
     "INSERT INTO USERS (ID, NAME, PASSWORD)" \
     "VALUES (3, 'Wilma', 'Flinstone');" \
     "INSERT INTO USERS (ID, NAME, PASSWORD)" \
-    "VALUES (4, 'Betty', 'Rubble');";
+    "VALUES (4, 'Betty', 'Rubble');" \
+      //Four new dummy sets, to further test OR/AND, with no constant reference like the sample four
+    "INSERT INTO USERS (ID, NAME, PASSWORD)" \
+    "VALUES (5, 'Randy', 'Orbit');" \
+    "INSERT INTO USERS (ID, NAME, PASSWORD)" \
+    "VALUES (6, 'Boris', 'Andre');" \
+    "INSERT INTO USERS (ID, NAME, PASSWORD)" \
+    "VALUES (7, 'Orlando', 'Corey');" \
+    "INSERT INTO USERS (ID, NAME, PASSWORD)" \
+    "VALUES (8, 'Bandit', 'Bandy');";
 
   result = sqlite3_exec(db, sql.c_str(), callback, NULL, &error_message);
   if (result != SQLITE_OK)
@@ -74,23 +85,50 @@ bool initialize_database(sqlite3* db)
 }
 
 int find_match_position(std::string s) {
+//First, we cover the OR searches, then we have a separate set for the AND searches, to enhance search capability
     std::smatch m;
     std::regex e1("or");
-    //First it checks for the phrase 'or' and if it does not find based off of that, it searches for value = value itself 
-    //with an 'and' inclusion since that could technically also be used, these are like a failsafe idea.
-    std::regex e2("and '[a-zA-Z]+' = '[a-zA-Z'] + '");
-    std::regex e3("and  '[1-9]+=[1-9]+'");
+//First it checks for the phrase 'or' and if it does not find based off of that, it searches for or value = value itself 
+//New Version of our  OR searches, with the old ones commented out
+    std::regex e2("or '[a-zA-Z]+' = '[a-zA-Z'] + '");
+    std::regex e3("or  '[1-9]+=[1-9]+'");
 
     std::regex_search(s, m, e1);
-    //If it fails to find from or, it runs both the e2 and e3 checks to check for and value=value, since or as well as and are the common ones, again
-    //this is to create a sort of additional failsafe in theory. 
+//If it fails to find from or, it runs both the e2 and e3 checks to check for or value=value
     if (m.position(0) == 0) {
         std::regex_search(s, m, e2);
         std::regex_search(s, m, e3);
     }
+//This section is identical to the OR searches, but uses AND instead
+    std::smatch m2;
+    std::regex e4("and");
+
+
+//Our AND Searches moved to a new location, since it does this search set after the OR set. 
+    std::regex e5("and '[a-zA-Z]+' = '[a-zA-Z'] + '");
+    std::regex e6("and  '[1-9]+=[1-9]+'");
+
+    std::regex_search(s, m2, e4);
+    if (m.position(0) == 0) {
+        std::regex_search(s, m2, e5);
+        std::regex_search(s, m2, e6);
+    }
+
+
+    //Final failsafe regex search using just value phrases.
+    std::regex e7("'[a-zA-Z]+' = '[a-zA-Z'] + '");
+    std::regex e8("'[1-9]+=[1-9]+'");
+    if (m.position(0) == 0) {
+        std::regex_search(s, e7);
+        std::regex_search(s, e8);
+    }
+
     std::cout << "Match for concerning phrase found, position information hidden.";
     //I figured, that once I had an understanding of this code, the possition information should be hidden from the view because that could be used
     //in order to make attacks more easy.
+
+
+
     return m.position(0);
 }
 bool run_query(sqlite3* db, const std::string& sql, std::vector< user_record >& records)
@@ -139,6 +177,8 @@ bool run_query_injection(sqlite3* db, const std::string& sql, std::vector< user_
 
     switch (rand() % 4)
     {
+       
+      //Section of OR cases
     case 1:
       injectedSQL.append(" or 2=2;");
       break;
@@ -148,6 +188,20 @@ bool run_query_injection(sqlite3* db, const std::string& sql, std::vector< user_
     case 3:
       injectedSQL.append(" or 'hack'='hack';");
       break;
+      //Section of additional cases for AND searches.
+    case 4:
+       injectedSQL.append(" and 2=2;");
+       break;
+    case 5:
+       injectedSQL.append(" and 'hi'='hi';");
+       break;
+    case 6:
+       injectedSQL.append(" and 'hack'='hack';");
+       break;
+    case 7:
+       injectedSQL.append(" and 1=1;");
+       break;
+       //Default or case #0
     case 0:
     default:
       injectedSQL.append(" or 1=1;");
@@ -181,17 +235,35 @@ void run_queries(sqlite3* db)
   std::string sql = "SELECT * from USERS";
   if (!run_query(db, sql, records)) return;
   dump_results(sql, records);
+  // query old
+  std::string sql = "SELECT * from USERS WHERE ID='1','2','3','4'";
+  if (!run_query(db, sql, records)) return;
+  dump_results(sql, records);
+  // query old
+  std::string sql = "SELECT * from USERS WHERE ID='5','6','7','8'";
+  if (!run_query(db, sql, records)) return;
+  dump_results(sql, records);
 
   //  query 1
   sql = "SELECT ID, NAME, PASSWORD FROM USERS WHERE NAME='Fred'";
   if (!run_query(db, sql, records)) return;
   dump_results(sql, records);
-
-  //  run query 1 with injection 5 times
-  for (auto i = 0; i < 5; ++i)
+  //  run query 1 with injection 10 times, originally 5
+  for (auto i = 0; i < 10; ++i)
   {
     if (!run_query_injection(db, sql, records)) continue;
     dump_results(sql, records);
+  }
+
+  //  query 2
+  sql = "SELECT ID, NAME, PASSWORD FROM USERS WHERE NAME='Randy'";
+  if (!run_query(db, sql, records)) return;
+  dump_results(sql, records);
+  //  run query 2 with injection 5 times
+  for (auto i = 0; i < 5; ++i)
+  {
+      if (!run_query_injection(db, sql, records)) continue;
+      dump_results(sql, records);
   }
 
 }

@@ -4,5 +4,6 @@ For the capstone course, we have to show our competency with certain categories 
 
 <h2>CODE REVIEW VIDEO IMAGE</h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7VPagv84TxQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[Script](Code Review Script.rtf)
 
 

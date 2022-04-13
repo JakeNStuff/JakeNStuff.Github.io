@@ -1,10 +1,8 @@
-## Capstone Jacob Mousseau
+# Capstone Jacob Mousseau
 
 For the capstone course, we have to show our competency with certain categories of work and how we can meet those goals, first and foremost, here is the code review video, Below it is a link to the script I used to guide myself, but it should not be 1 to 1 in this case. 
 
+##CODE REVIEW VIDEO IMAGE
 [![CODE REVIEW](https://img.youtube.com/vi/7VPagv84TxQ/0.jpg)](https://www.youtube.com/watch?v=7VPagv84TxQ)
 
-<h1 id="Code Review">
-  <a href="https://www.youtube.com/watch?v=7VPagv84TxQ">Code Review</a>
-</h1>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7VPagv84TxQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+

@@ -17,8 +17,9 @@ The full narrative is available at the link above, but, to give a run down, this
 
 A design flaw that is still present after these enhancements though, is the fact that the key is pretty obvious within the code itself, altough this is for testing our knowledge, it would be better for the key to be hidden more so, maybe within a separated file of it's own, that gets plugged in. While this allows us to use anything as our encryption key, if we were to use this particular code in a real world environment, it would be pointless to use because it gives us the key, it encrypts the input file, but then also decrypts it by itself. It would make more sense to have encryption and decryption as separated files. So my next goal if I continued to work on it would be to separate the functions into two files. Below is the code of the python files, the original CPP code can be found [here.](Encryption.cpp)
 
-Encryption.py
+[Encryption PY](IMG Encryption PY.png)
 ![Encryption PY](IMG Encryption PY.png)
-Globals.py
+
+[Globals PY](IMG Globals PY.png)
 ![Globals PY](IMG Globals PY.png)
 

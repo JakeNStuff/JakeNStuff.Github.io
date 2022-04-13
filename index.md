@@ -8,5 +8,9 @@ For the capstone course, we have to show our competency with certain categories 
 
 [Script](Code Review Script.rtf)
 
+<h1>CATEGORY 1:</h1>
+<h2>Enhancement: Software Design and Engineering</h2>
+<h3>File Used: Encryption.cpp</h3>
+
 
 

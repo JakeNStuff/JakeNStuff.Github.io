@@ -24,8 +24,13 @@ A design flaw that is still present after these enhancements though, is the fact
 ![Globals PY](IMG Globals PY.png)
 
 <h1>CATEGORY 2:</h1>
-<h2>Enhancement:Algorithm and Data Structures</h2>
-<h3>File Used: SQL Injection+.sln</h3>
+<h2>Enhancement: Algorithm and Data Structures</h2>
+<h3>File Used: SQL Injection.cpp</h3>
 [Narrative](CATEGORY 2 NARRATIVE.rtf)
 
 Again, the full narrative is available above, but this is also from my 405 course, and the purpose of it initially was to teach us about SQL injections and how to deal with them, but the basis on how we dealt with them in the course was not very concrete and lacked security failsafes, which was part of my focus. Making sure my regex searches dealt with every facet I could think of. (Images and additional info to be added)
+
+<h1>CATEGORY 3:</h1>
+<h2>Enhancement: Databases</h2>
+<h3>File Used: JM_animals_CRUD_altered.py / JM_ProjectTwoDashboard(Resubmit).ipynb / NEW: ProjectTest.ipynb </h3>
+[Narrative](Databases Narrative.rtf)

@@ -43,12 +43,14 @@ There is also now more dummy data, as well as the additional injection tests to 
 [Narrative](Databases Narrative.rtf)
 
 This file set had a lot of massive overhauls. I changed the way some values were named as well when overhauling code chunks to make it easier to read and understand. Firstly, in the dashboard ipynb, the on_click def has been completely removed, replaced with update_dashboard, which is a cleaner, more effective version of it. With the values each individually sectioned so you can tell what you are looking at more easily. Below is value 3 and 4, which are Disaster Rescue, and the RESET value, respectively.
+
 [Dash 1](Dash 1.png)
 ![Dash 1](Dash 1.png)
 
 I also restructured the chart generation to make it easier to read, but the general functionality is still the same from what it should be.
 
-The biggest change is within the update_map definition. My original code structure is commented out there to showcase the difference between the setup and layout of the old and new versions. Another upside to the new version, is it's in theory, a tileable chunk of code, meaning I could copy and paste it to do maps for multiple rows instead of for a single/default row as shown in the comments. For the sake of readability and working on other enhancements, I only included the one instance: 
+The biggest change is within the update_map definition. My original code structure is commented out there to showcase the difference between the setup and layout of the old and new versions. Another upside to the new version, is it's in theory, a tileable chunk of code, meaning I could copy and paste it to do maps for multiple rows instead of for a single/default row as shown in the comments. For the sake of readability and working on other enhancements, I only included the one instance:
+ 
 [Dash 2](Dash 2.png)
 ![Dash 2](Dash 2.png)
 
